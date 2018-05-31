@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>I'm Jovial George</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="img/avatar.png">
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="fonts-lato.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+    height: 100%;
+    color: #777;
+    line-height: 1.8;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+    background-image: url("img/hills.jpeg");
+    min-height: 100%;
+}
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+    background-image: url("img/focus.jpeg");
+    min-height: 400px;
+}
+
+/* Third image (Contact) */
+.bgimg-3 {
+    background-image: url("img/green.jpeg");
+    min-height: 400px;
+}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+    }
+}
+
+.w3-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* For Toast */
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body onload="checkmsg()">
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="#home" class="w3-bar-item w3-button">Jovial George</a>
+    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> About</a>
+    <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> Portfolio</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> Contact</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+    <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
+    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+  </div>
+</div>
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity w3-hide-small">Let's Do<!--<span class="w3-hide-small"> Do</span>--> Something Awesome Together!</span>
+    <span class="w3-center w3-padding-large w3-black w3-hide-large">Let's Do<!--<span class="w3-hide-small"> Do</span>--> Something Awesome Together!</span>
+  </div>
+</div>
+
+<!-- Container (About Section) -->
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <h3 class="w3-center">ABOUT ME</h3>
+  <p class="w3-center"><em>I love technology, movies, music, dance,...</em></p>
+  <p>I m 20 old walking dead. Come on, walking dead ? Can't walk if I m dead. Right ? Just kidding. First of all, I m not self praising guy. So telling about myself, I would say I m a dreamer who is working so hard to bring his fantacy world into the reality. Sounds like some kind of a fantacy story, Right ? Actually I m not fan of fantacy stories, Nah again kidding. I really loves and passionate about developing cool tech stuff, coding, hacking, cinematography, movie direction, music production, EDM creation, dancing, hip-hop, rapping, etc. That's so much, Yeah I know its feels heavy but don't worry I m holding up. Currently, I doing my Undergradution studies under KTU. So to know more just keep going. That's not kidding for sure.</p>
+  <div class="w3-row">
+    <div class="w3-col m6 w3-center w3-padding-large">
+      <p><b><i class="fa fa-user w3-margin-right"></i>Jovial John George</b></p><br>
+      <img src="img/profile1.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="250" height="250">
+    </div>
+
+    <!-- Hide this text on small devices -->
+    <div class="w3-col m6 w3-hide-small w3-padding-large">
+      <p>Welcome to my official website. In this, I will keep you guys update with my all new stuffs and timeline of my life. It gives you some idea about my recent works and my personal interests. Explore about my passions and works here. I have also provided essential social media links and contacts information for my further detials or personal meetings.</p>
+    </div>
+  </div>
+  <p class="w3-large w3-padding-16" style="text-indent: 45px;">Things I m really good at:</p>
+  <p class="w3-wide"><i class="fa fa-laptop"></i>Web Design</p>
+  <p class="w3-wide"><i class="fa fa-mobile"></i>App Development</p>
+  <p class="w3-wide"><i class="fa fa-connectdevelop"></i>IoT Programming</p>
+  <p class="w3-wide"><i class="fa fa-music"></i>Music Production</p>
+  <p class="w3-wide"><i class="fa fa-video-camera"></i>Cinematography</p>
+  <p class="w3-wide"><i class="fa fa-camera"></i>Photography</p>
+  <p class="w3-wide"><i class="fa fa-photo"></i>Multimedia Editing</p>
+
+  <!--<div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:75%">75%</div>
+  </div>-->
+</div>
+
+<div class="w3-row w3-center w3-dark-grey w3-padding-16">
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">18+</span><br>
+    Collabrators
+  </div>
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">12+</span><br>
+    Projects Done
+  </div>
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">11+</span><br>
+    Happy Clients
+  </div>
+  <div class="w3-quarter w3-section">
+    <span class="w3-xlarge">2+</span><br>
+    Meetings
+  </div>
+</div>
+
+<!-- Second Parallax Image with Portfolio Text -->
+<div class="bgimg-2 w3-display-container w3-opacity-min" id="portfolio">
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-white w3-wide">PORTFOLIO</span>
+  </div>
+</div>
+
+<!-- Reputation section(Testimonials) -->
+<div class="w3-content w3-container w3-padding-32">
+    <h3 class="w3-padding-24 w3-center">MY REPUTATIONS</h3>
+    <img src="img/fuse.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+    <p><span class="w3-large w3-text-black w3-margin-right">Co-founder</span> @ Fuse Org</p>
+    <p>Technology based organization.</p><br>
+   
+    <img src="img/alien.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+    <p><span class="w3-large w3-text-black w3-margin-right">Founder & CEO</span> @ AlienGame Org</p>
+    <p>Web, mobile app and IoT based organization.</p><br>
+    
+    <img src="img/phine.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+    <p><span class="w3-large w3-text-black w3-margin-right">Co-founder</span> @ Phine Org</p>
+    <p>Technology based organization.</p><br>
+
+    <img src="img/xo.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+    <p><span class="w3-large w3-text-black w3-margin-right">Founder & CEO</span> @ XO Vision</p>
+    <p>Vision media group.</p><br>
+</div>
+
+<!-- Container (Portfolio Section) -->
+<div class="w3-container w3-padding-64 w3-dark-grey">
+  <h3 class="w3-center">MY WORKS</h3>
+  <p class="w3-center"><em>Here are some of my latest works.<br> Explore them all</em></p><br>
+
+  <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+  <div class="w3-row-padding w3-center">
+    <div class="w3-col m3">
+      <img src="img/lit.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="One of my photography direction and editing work">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="img/shine.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="My another photography and editing work">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="img/roadtrip.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="My team, RoadAhead on TechStar Program initiated by Google Inc.">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="img/feedie.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="My Fuse Org. team getting certification for our first project FeediE from the principal of NCERC">
+    </div>
+  </div>
+
+  <div class="w3-row-padding w3-center w3-section">
+    <div class="w3-col m3">
+      <img src="img/fall.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="My another photography and editing work">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="img/dark.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="My another photography and editing work">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="img/sea.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="My another photography and editing work">
+    </div>
+
+    <div class="w3-col m3">
+      <img src="img/island.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="My another photography and editing work">
+    </div>
+    <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">SEE MORE</button>
+  </div>
+</div>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+  <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption" class="w3-opacity w3-large"></p>
+  </div>
+</div>
+
+<!-- Container (Project Section) -->
+<div class="w3-content w3-container w3-padding-64">
+  <h3 class="w3-center">MY PROJECTS</h3>
+  <p class="w3-center"><em>These are some of the projects I m currently working on.</em></p><br>
+
+  <div class="w3-row w3-padding-24">
+    <div class="w3-col m3 w3-card w3-margin-right w3-margin-bottom">
+      <img src="img/fuse.png" alt="Avatar" style="width:100%">
+      <div class="w3-container">
+      <h4><b>FeediE</b></h4> 
+        <p>Student-teacher feedback system</p> 
+      </div>
+    </div>
+    <div class="w3-col m3 w3-card w3-margin-right w3-margin-bottom">
+      <img src="img/secret.png" alt="Avatar" style="width:100%">
+      <div class="w3-container">
+      <h4><b>SecretFiles</b></h4> 
+        <p>Conspiracy content documentation website</p> 
+      </div>
+    </div>
+    <div class="w3-col m3 w3-card w3-margin-right w3-margin-bottom">
+      <img src="img/chat.png" alt="Avatar" style="width:100%">
+      <div class="w3-container">
+      <h4><b>ChatApp</b></h4> 
+        <p>Simple online chating app for all platform users</p> 
+      </div>
+    </div>
+    <div class="w3-col m2 w3-card w3-margin-right w3-margin-bottom">
+      <p style="font-size: 96px;">&nbsp&nbsp&nbsp&gt</p>
+    </div>
+  </div>
+</div>
+
+<!-- Third Parallax Image with Portfolio Text -->
+<div class="bgimg-3 w3-display-container w3-opacity-min" id="contact">
+  <div class="w3-display-middle">
+     <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
+  </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<div style="padding: 0;" class="w3-container">
+  <div class="w3-padding-64">
+  <h3 class="w3-center">FIND ME ON</h3>
+  <p class="w3-center"><em>I love to meet new people!</em></p>
+
+  <div class="w3-row w3-padding-64 w3-center w3-content">
+    <div class="w3-col m3 w3-panel">
+      <a href="https://www.facebook.com/Jovial.George.008" target="_blank"><img src="img/facebook.png"></a>
+    </div>
+    <div class="w3-col m3 w3-panel">
+      <a href="https://www.instagram.com/jovial_george_/" target="_blank"><img src="img/instagram.png"></a>
+    </div>
+    <div class="w3-col m3 w3-panel">
+      <a href="https://twitter.com/Jovial_George" target="_blank"><img src="img/twitter.png"></a>
+    </div>
+    <div class="w3-col m3 w3-panel">
+      <a href="https://www.linkedin.com/in/jovial-george-a10448128/" target="_blank"><img src="img/linkedin.png"></a>
+    </div>
+  </div>
+  </div>
+  
+  <div class="w3-container w3-padding-64 w3-yellow">
+  <div class="w3-content">
+  <h3 class="w3-center">WHERE I WORK</h3>
+  <p class="w3-center"><em>I'd love your feedback!</em></p>
+
+  <div class="w3-row w3-padding-32 w3-section">
+    <div class="w3-col m4 w3-container">
+      <!-- Add Google Maps -->
+      <div id="googleMap" class="w3-round-large w3-greyscale" style="width:100%;height:400px;"></div>
+    </div>
+    <div class="w3-col m8 w3-panel">
+      <div class="w3-large w3-margin-bottom">
+        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Ernakulam, Kerala, India<br>
+        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +91 9567682071<br>
+        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: jovialjohngeorge248@gmail.com<br>
+      </div>
+      <p>Let's start with a coffee <i class="fa fa-coffee"></i>, or leave me a message:</p>
+      <form action="?msg=1" method="post" onsubmit="writeUserData()">
+        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+          <div class="w3-half">
+            <input class="w3-input w3-border" id="name" type="text" placeholder="Name" required name="Name">
+          </div>
+          <div class="w3-half">
+            <input class="w3-input w3-border" id="email" type="email" placeholder="Email" required name="Email">
+          </div>
+        </div>
+        <input class="w3-input w3-border" id="message" type="text" placeholder="Message" required name="Message">
+        <button class="w3-button w3-black w3-right w3-section" id="submit" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </form>
+    </div>
+  </div>
+  </div>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-xlarge w3-section">
+    <a href="https://www.facebook.com/Jovial.George.008" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+    <a href="https://www.instagram.com/jovial_george_/" target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+    <!--<i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>-->
+    <a href="https://twitter.com/Jovial_George" target="_blank"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+    <a href="https://www.linkedin.com/in/jovial-george-a10448128/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+  </div>
+  <p>Powered by <a href="" target="_blank" class="w3-hover-text-green">AlienGame Org.</a></p>
+</footer>
+
+<div id="snackbar">Your message has been sent !!</div>
+
+<!-- For Firebase Config -->
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+
+<!-- Add Google Maps -->
+<script>
+function myMap()
+{
+  myCenter=new google.maps.LatLng(9.9679331, 76.2989981);
+  var mapOptions= {
+    center:myCenter,
+    zoom:12, scrollwheel: false, draggable: false,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+
+  var marker = new google.maps.Marker({
+    position: myCenter,
+  });
+  marker.setMap(map);
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+    }
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+//For Firebase
+// Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAFfqAK53CH0MJL7x8BolO6AUOwEOV5210",
+    authDomain: "iamjovialgeorge.firebaseapp.com",
+    databaseURL: "https://iamjovialgeorge.firebaseio.com",
+    projectId: "iamjovialgeorge",
+    storageBucket: "iamjovialgeorge.appspot.com",
+    messagingSenderId: "36685840244"
+  };
+  firebase.initializeApp(config);
+  // Get a reference to the database service
+  var database = firebase.database();
+
+//For writing into JSON
+function writeUserData() {
+  var name = document.getElementById('name').value;
+  var email = document.getElementById('email').value;
+  var message = document.getElementById('message').value;
+  // Get a key for a new Post.
+  var newKey = firebase.database().ref().child('messages').push().key;
+  firebase.database().ref('messages/' + newKey).set({
+    name: name,
+    email: email,
+    message : message
+  });
+}
+
+//For Toast
+function toast() {
+    var x = document.getElementById("snackbar");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+
+function checkmsg() {
+  var urlParams = new URLSearchParams(window.location.search);
+  var temp = urlParams.get('msg');
+  if( temp == 1 ){
+    toast();
+  }
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUVdsinKmxRyRaULiCetLihbVjZ3-FeR8&callback=myMap"></script>
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+
+</body>
+</html>
