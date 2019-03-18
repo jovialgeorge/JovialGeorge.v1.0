@@ -7,6 +7,7 @@
   </div>
 </div>
 
+## JovialGeorge
 :necktie: A personal website made using pure HTML, CSS and JavaScript. It is hosted in the firebase platform. JSON is used as database to take
 essential message and other data.
 
