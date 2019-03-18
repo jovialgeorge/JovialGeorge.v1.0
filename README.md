@@ -1,4 +1,12 @@
-# JovialGeorge
+<div align="center">
+  <img src="https://iamjovialgeorge.firebaseapp.com/img/avatar.png" alt="Logo" height="200" width="200">
+  <br>
+  <h1>Jovial George</h1>
+  <div>Built with 🧠 by
+    <a href="https://github.com/Jovial248">Jovial George</a>
+  </div>
+</div>
+
 :necktie: A personal website made using pure HTML, CSS and JavaScript. It is hosted in the firebase platform. JSON is used as database to take
 essential message and other data.
 
